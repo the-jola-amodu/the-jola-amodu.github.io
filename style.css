@@ -57,8 +57,19 @@ a:hover{
     /* text-underline-offset: 0.5rem; */
 }
 
+.logo-image{
+    height: 75px;
+    border-radius: 50%;
+}
+
 .logo{
     font-size: 2rem;
+    display: flex;
+}
+
+.logo p{
+    margin-top: 0.6rem;
+    margin-left: 1rem;
 }
 
 .logo:hover{
