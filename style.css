@@ -182,8 +182,8 @@ section{
 }
 
 .profile-image{
-    /* height: 400px;
-    width: 400px; */
+    height: 500px;
+    width: 450px;
     border-radius: 50%;
 }
 
@@ -269,4 +269,30 @@ section{
 
 .btn-container{
     gap: 1rem;
+}
+
+/* ABOUT ME */
+
+.about-details-container p {
+    margin-top: 2rem;
+    width: 700px;
+}
+
+#about{
+    margin-top: 3rem;
+}
+
+.details-container{
+    display: flex;
+    margin-top: 1rem;
+}
+
+.details-container h3{
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+}
+
+.about-pic{
+    border-radius: 50%;
+    
 }
