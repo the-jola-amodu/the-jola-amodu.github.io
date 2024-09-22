@@ -192,15 +192,15 @@ section{
     text-align: center;
 }
 
-.section__text_p{
+.section__text p{
     font-weight: 600;
 }
 
-.section__text_p1{
+.section__text__p1{
     text-align: center;
 }
 
-.section__text_p2{
+.section__text__p2{
     font-size: 1.75rem;
     margin-bottom: 1rem;
 }
@@ -210,11 +210,21 @@ section{
     text-align: center;
 }
 
-#socialc-container{
+#socials-container{
     display: flex;
     justify-content: center;
     margin-top: 1rem;
     gap: 1rem;
+}
+
+.social-box{
+    margin-top: 2rem;
+    display: flex;
+}
+
+.social-box img{
+    height: 2px;
+    width: 2px;
 }
 
 /* ICONS */
@@ -273,26 +283,108 @@ section{
 
 /* ABOUT ME */
 
-.about-details-container p {
-    margin-top: 2rem;
-    width: 700px;
+#about{
+    margin-top: 8rem;
+    position: relative;
 }
 
-#about{
-    margin-top: 3rem;
+.about-containers{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.about-details-container{
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-containers, .about-details-container{
+    display: flex;
+}
+
+.about-pic{
+    border-radius: 2rem;
+}
+
+.arrow{
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
 }
 
 .details-container{
-    display: flex;
-    margin-top: 1rem;
+    padding: 0.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
 }
 
-.details-container h3{
+.section-headers, 
+.details-container p{
+    display: flex;
+    margin-left: 1rem;
+}
+
+.section-headers h3{
     margin-top: 1rem;
     margin-left: 0.5rem;
 }
 
-.about-pic{
-    border-radius: 50%;
-    
+.text-container p{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
+
+.mini-italic{
+    font-size: small;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.section-container{
+    /* gap: 4rem; */
+    height: 80%;
+}
+
+.section__pic-container{
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.skill-section{
+    margin-top: 2rem;
+    margin-left: -1.1rem;
+}
+
+.skill-icon{
+    cursor: pointer;
+    height: 4rem;
+}
+
+.skill-box{
+    display: flex;
+}
+
+.skill-container{
+    display: grid;
+    margin: 1rem;
+}
+  
+.skill-text {
+    opacity: 0;
+    text-align: center;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+  
+.skill-container:hover .skill-text {
+    opacity: 1;
+    text-decoration: underline;
+    font-style: italic;
+    transform: translateY(0);
+}
+  

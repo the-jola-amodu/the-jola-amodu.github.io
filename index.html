@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jola's Portfolio</title>
+    <title>
+      Jola's Portfolio
+    </title>
+    <link rel="icon" href="./assets/icons/logo.png" type="image/png">">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
     <nav id="desktop-nav">
       <div class="logo">
-        <img src="./assets/logo.png" alt="logo" class="logo-image">
+        <img src="./assets/icons/logo.png" alt="logo" class="logo-image">
         <p>Jola Amodu</p>
       </div>
       <div>
@@ -23,7 +26,7 @@
       </div>
     </nav>
     <nav id="hamburger-nav">
-      <div class="logo"><img src="./assets/logo.png" alt="logo" class="logo-image"><p>Jola Amodu</p></div>
+      <div class="logo"><img src="./assets/icons/logo.png" alt="logo" class="logo-image"><p>Jola Amodu</p></div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -41,7 +44,7 @@
     <section id="profile">
       <div class="section__pic-container">
         <img
-          src="./assets/headshot.png"
+          src="./assets/images/headshot.png"
           alt="Jola Amodu Profile pic"
           class="profile-image"
         />
@@ -53,7 +56,7 @@
         <div class="btn-container">
           <button
             class="btn btn-color-2"
-            onclick="window.open('./assets/Jolas CV.pdf')"
+            onclick="window.open('./assets/documents/Jolas CV.pdf')"
           >
             Download CV
           </button>
@@ -63,13 +66,13 @@
         </div>
         <div id="socials-container">
           <img
-            src="./assets/linkedin.png"
+            src="./assets/icons/linkedin.png"
             alt="linkedin profile"
             class="icon"
             onclick="location.href='https://www.linkedin.com/in/jolaoluwa-amodu-9b9832261/'"
           />
           <img
-            src="./assets/github.png"
+            src="./assets/icons/github.png"
             alt="github profile"
             class="icon"
             onclick="location.href='https://github.com/I-am-that-guy'"
@@ -86,21 +89,74 @@
       </h1>
       <div class="section-container">
         <div class="section__pic-container">
-          <img src="./assets/Untitled.png" alt="Another profile pic" class="about-pic">
+          <img src="./assets/images/Untitled.png" alt="Another profile pic" class="about-pic">
         </div>
         <div class="about-details-container">
-          <p>I am currently a freshman student at Fisk University with interests in software engineering, automation and electronics. I am a Python developer with experience in website development. </p>
-          <p>I would describe myself as motivated, meticulous and inventive. I also love to connect concepts across my areas of interests to foster innovation and weave a bit of creativity into my technical work. </p>
-          <!-- <p>But I also want my work to speak for itself, so ...</p> -->
           <div class="about-containers">
             <div class="details-container">
-              <img src="./assets/skills.png" alt="skills icon" class="icon">
-              <h3>Skills</h3>
-              <!-- Add skills Here -->
+              <div class="section-headers">
+                <img src="./assets/icons/experience.png" alt="suitcase icon from flaticon.com" class="icon">
+                <h3>Experience Summary</h3>
+              </div>
+              <p>I will be sure to update this soon!</p>
             </div>
-          </div>
-        </div>
-      </div>
+            <div class="details-container">
+              <div class="section-headers">
+                <img src="./assets/icons/education.png" alt="education icon" class="icon">
+                <h3>Education</h3>
+              </div>
+                <p>Bachelors of Science in Computer Science</p>
+                <p class="mini-italic">Minor in Business Administration</p>
+              </div>  
+                </div> 
+                <div class="text-container">
+                  <p>I am currently a freshman student at Fisk University with interests in software engineering, automation and electronics. I am a Python developer with experience in website development. </p>
+                  <p>I would describe myself as motivated, meticulous and inventive. I also love to connect concepts across my areas of interests to foster innovation and weave a bit of creativity into my technical work. </p>
+                  <div class="skill-section">
+                    <div class="section-headers">
+                      <img src="./assets/icons/skills.png" alt="skills icon" class="icon">
+                      <h3>Skills</h3>
+                    </div>
+                    <div class="skill-box">
+                      <div class="skill-container">
+                        <img src="./assets/icons/python.png" alt="python icon from flaticon" class="skill-icon">
+                        <p class="skill-text">Python</p>
+                      </div>
+                      <div class="skill-container">
+                        <img src="./assets/icons/css-3.png" alt="css icon from flaticon" class="skill-icon">
+                        <p class="skill-text">CSS</p>
+                      </div>
+                      <div class="skill-container">
+                        <img src="./assets/icons/html.png" alt="html icon from flaticon" class="skill-icon">
+                        <p class="skill-text">HTML</p>
+                      </div>
+                      <div class="skill-container">
+                        <img src="./assets/icons/java-script.png" alt="javascript icon from flaticon" class="skill-icon">
+                        <p class="skill-text">JavaScript</p>
+                      </div>
+                      <div class="skill-container">
+                        <img src="./assets/icons/flask.png" alt="flask icon from flaticon" class="skill-icon">
+                        <p class="skill-text">Flask Framework</p>
+                      </div>
+                      <div class="skill-container">
+                        <img src="./assets/icons/c-.png" alt="c++ icon from flaticon" class="skill-icon">
+                        <p class="skill-text">C++</p>
+                      </div>
+                      <div class="skill-container">
+                        <img src="./assets/icons/figma.png" alt="figma icon from flaticon" class="skill-icon">
+                        <p class="skill-text">Figma</p>
+                      </div>
+                      <div class="skill-container">
+                        <img src="./assets/icons/git.png" alt="git icon from flaticon" class="skill-icon">
+                        <p class="skill-text">Git</p>
+                      </div>        
+                    </div>
+                     </div> 
+                </div>
+              </div>
+              </div>  
+            </div>
+         <img src="./assets/icons/arrow.png" alt="arrow down" class="icon arrow" onclick="location.href='./experience'">   
     </section>
     <script src="script.js"></script>
   </body>
