@@ -19,6 +19,7 @@
     }
     #profile, .section-container{
         display: block;
+        position: static;
     }
 
     .profile-image{
