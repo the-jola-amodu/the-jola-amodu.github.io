@@ -47,6 +47,10 @@
         margin-top: 0;
     }
 
+    #skills{
+        height: 50vh;
+    }
+
     .skill-icon{
         height: 50px;
         width: 50px;
@@ -55,9 +59,11 @@
     .skill-text{
         font-size: 9px;
         opacity: 1;
+        transform: translateY(0);
     }
     .skill-subtext{
         display: none;
+        transform: translateY(0);
     }
 
     .skill-container{
