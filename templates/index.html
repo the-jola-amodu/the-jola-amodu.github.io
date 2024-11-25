@@ -6,14 +6,14 @@
     <title>
       Jola's Portfolio
     </title>
-    <link rel="icon" href="./static/assets/icons/logo.png" type="image/png">
-    <link rel="stylesheet" href="./static/css/style.css" />
-    <link rel="stylesheet" href="./static/css/mediaqueries.css" />
+    <link rel="icon" href="{{ url_for('static', filename='assets/icons/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mediaqueries.css') }}" />
   </head>
   <body>
     <nav id="desktop-nav">
       <div class="logo">
-        <img src="./static/assets/icons/logo.png" alt="logo" class="logo-image">
+        <img src="{{ url_for('static', filename='assets/icons/logo.png') }}" alt="logo" class="logo-image">
         <p>Jola Amodu</p>
       </div>
       <div>
@@ -26,7 +26,7 @@
       </div>
     </nav>
     <nav id="hamburger-nav">
-      <div class="logo"><img src="./static/assets/icons/logo.png" alt="logo" class="logo-image"><p>Jola Amodu</p></div>
+      <div class="logo"><img src="{{ url_for('static', filename='assets/icons/logo.png') }}" alt="logo" class="logo-image"><p>Jola Amodu</p></div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -44,7 +44,7 @@
     <section id="profile">
       <div class="section__pic-container">
         <img
-          src="./static/assets/images/headshot.png"
+          src="{{ url_for('static', filename='assets/images/headshot.png') }}"
           alt="Jola Amodu Profile pic"
           class="profile-image"
         />
@@ -56,7 +56,7 @@
         <div class="btn-container">
           <button
             class="btn btn-color-2"
-            onclick="window.open('./static/assets/documents/Jolas CV.pdf')"
+            onclick="window.open('{{ url_for('static', filename='assets/documents/Jolas CV.pdf') }}')"
           >
             Download CV
           </button>
@@ -66,20 +66,20 @@
         </div>
         <div id="socials-container">
           <img
-            src="./static/assets/icons/linkedin.png"
+            src="{{ url_for('static', filename='assets/icons/linkedin.png') }}"
             alt="linkedin profile"
             class="icon"
             onclick="location.href='https://www.linkedin.com/in/jolaoluwa-amodu/'"
           />
           <img
-            src="./static/assets/icons/github.png"
+            src="{{ url_for('static', filename='assets/icons/github.png') }}"
             alt="github profile"
             class="icon"
             onclick="location.href='https://github.com/I-am-that-guy'"
           />
         </div>
       </div>
-      <img src="./static/assets/icons/arrow.png" alt="arrow down" class="icon arrow" onclick="location.href='./#about'">
+      <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow" onclick="location.href='./#about'">
     </section>
     <section id="about">
       <p class="section__text__p1">
@@ -90,20 +90,20 @@
       </h1>
       <div class="section-container">
         <div class="section__pic-container">
-          <img src="./static/assets/images/Untitled.png" alt="Another profile pic" class="about-pic">
+          <img src="{{ url_for('static', filename='assets/images/Untitled.png') }}" alt="Another profile pic" class="about-pic">
         </div>
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
               <div class="section-headers">
-                <img src="./static/assets/icons/experience.png" alt="suitcase icon from flaticon.com" class="icon">
+                <img src="{{ url_for('static', filename='assets/icons/experience.png') }}" alt="suitcase icon from flaticon.com" class="icon">
                 <h3>Experience Summary</h3>
               </div>
               <p>I will be sure to update this soon!</p>
             </div>
             <div class="details-container">
               <div class="section-headers">
-                <img src="./static/assets/icons/education.png" alt="education icon" class="icon">
+                <img src="{{ url_for('static', filename='assets/icons/education.png') }}" alt="education icon" class="icon">
                 <h3>Education</h3>
               </div>
                 <p>Bachelors of Science in Computer Science</p>
@@ -117,7 +117,7 @@
               </div>
               </div>
             </div>
-         <img src="./static/assets/icons/arrow.png" alt="arrow down" class="icon arrow" onclick="location.href='./#skills'">
+         <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow" onclick="location.href='./#skills'">
     </section>
     <section id="skills">
       <div class="skill-section">
@@ -128,48 +128,48 @@
         </div>
         <div class="skill-box">
           <div class="skill-container">
-            <img src="./static/assets/icons/python.png" alt="python icon from flaticon" class="skill-icon">
+            <img src="{{ url_for('static', filename='assets/icons/python.png') }}" alt="python icon from flaticon" class="skill-icon">
             <p class="skill-text">Python</p>
             <p class="skill-subtext">3 years experience, Proficient💪</p>
           </div>
           <div class="skill-container">
-            <img src="./static/assets/icons/css-3.png" alt="css icon from flaticon" class="skill-icon">
+            <img src="{{ url_for('static', filename='assets/icons/css-3.png') }}" alt="css icon from flaticon" class="skill-icon">
             <p class="skill-text">CSS</p>
             <p class="skill-subtext">2 years experience, Intermediate👌</p>
           </div>
           <div class="skill-container">
-            <img src="./static/assets/icons/html.png" alt="html icon from flaticon" class="skill-icon">
+            <img src="{{ url_for('static', filename='assets/icons/html.png') }}" alt="html icon from flaticon" class="skill-icon">
             <p class="skill-text">HTML</p>
             <p class="skill-subtext">2 years experience, Intermediate👌</p>
           </div>
           <div class="skill-container">
-            <img src="./static/assets/icons/java-script.png" alt="javascript icon from flaticon" class="skill-icon">
+            <img src="{{ url_for('static', filename='assets/icons/java-script.png') }}" alt="javascript icon from flaticon" class="skill-icon">
             <p class="skill-text">JavaScript</p>
             <p class="skill-subtext">1 year experience, Basic👍</p>
           </div>
           <div class="skill-container">
-            <img src="./static/assets/icons/flask.png" alt="flask icon from flaticon" class="skill-icon">
+            <img src="{{ url_for('static', filename='assets/icons/flask.png') }}" alt="flask icon from flaticon" class="skill-icon">
             <p class="skill-text">Flask Framework</p>
             <p class="skill-subtext">1 year experience, Intermediate👌</p>
           </div>
           <div class="skill-container">
-            <img src="./static/assets/icons/c-.png" alt="c++ icon from flaticon" class="skill-icon">
+            <img src="{{ url_for('static', filename='assets/icons/c-.png') }}" alt="c++ icon from flaticon" class="skill-icon">
             <p class="skill-text">C++</p>
             <p class="skill-subtext">1 year experience, Intermediate👌</p>
           </div>
           <div class="skill-container">
-            <img src="./static/assets/icons/figma.png" alt="figma icon from flaticon" class="skill-icon">
+            <img src="{{ url_for('static', filename='assets/icons/figma.png') }}" alt="figma icon from flaticon" class="skill-icon">
             <p class="skill-text">Figma</p>
             <p class="skill-subtext">1 year experience, Basic👍</p>
           </div>
           <div class="skill-container">
-            <img src="./static/assets/icons/git.png" alt="git icon from flaticon" class="skill-icon">
+            <img src="{{ url_for('static', filename='assets/icons/git.png') }}" alt="git icon from flaticon" class="skill-icon">
             <p class="skill-text">Git</p>
             <p class="skill-subtext">1 year experience, Intermediate👌</p>
           </div>        
         </div>
          </div>
-      <img src="./static/assets/icons/arrow.png" alt="arrow down" class="icon arrow" onclick="location.href='./#projects'">
+      <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow" onclick="location.href='./#projects'">
     </section>
     <section id="projects">
       <p class="section__text__p1">Browse My</p>
@@ -177,7 +177,7 @@
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="color-container">
-            <img src="./static/assets/icons/project1.png" alt="project-1" class="projects-img">
+            <img src="{{ url_for('static', filename='assets/icons/project1.png') }}" alt="project-1" class="projects-img">
             <h2 class="experience-subtitle project-title">AI Powered texteditor</h2>
             <p class="project-text">A text editor with AI powered paraphrasing, summary and content generation</p>
             <div class="experience-btns">
@@ -186,7 +186,7 @@
             </div>
           </div>
           <div class="color-container">
-            <img src="./static/assets/icons/project2.png" alt="project-2" class="projects-img">
+            <img src="{{ url_for('static', filename='assets/icons/project2.png') }}" alt="project-2" class="projects-img">
             <h2 class="experience-subtitle project-title">Interface for DJI Tello Drones</h2>
             <p class="project-text">Drone control with 3 DoF, live video feed, image capture, face detection and tracking</p>
             <div class="experience-btns">
@@ -199,18 +199,18 @@
         </div>
         </div>
       </div>
-      <img src="./static/assets/icons/arrow.png" alt="arrow down" class="icon arrow" onclick="location.href='./#contact'">
+      <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow" onclick="location.href='./#contact'">
     </section>
     <section id="contact">
       <p class="section__text__p1">Get In Touch</p>
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img src="./static/assets/icons/email.png" alt="email icon" class="icon contact-icon email-icon">
+          <img src="{{ url_for('static', filename='assets/icons/email.png') }}" alt="email icon" class="icon contact-icon email-icon">
           <p><a href="mailto:jola47amodu@gmail.com">jola47amodu@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
-          <img src="./static/assets/icons/linkedin.png" alt="linkedin icon" class="icon contact-icon">
+          <img src="{{ url_for('static', filename='assets/icons/linkedin.png') }}" alt="linkedin icon" class="icon contact-icon">
           <p><a href="https://www.linkedin.com/in/jolaoluwa-amodu">LinkedIn</a></p>
         </div>
         </div>
@@ -229,6 +229,6 @@
       </nav>
       <p>Copyright &#169; 2024 Jola Amodu. All Rights Reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>
