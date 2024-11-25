@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>
+      Jola's Portfolio
+    </title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/icons/logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mediaqueries.css') }}" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='assets/icons/logo.png') }}" alt="logo" class="logo-image">
+        <p>Jola Amodu</p>
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo"><img src="{{ url_for('static', filename='assets/icons/logo.png') }}" alt="logo" class="logo-image"><p>Jola Amodu</p></div>
+      <div class="hamburger-menu">
+        <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
+        <label for="checkbox1">
+            <div class="hamburger hamburger1">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+                <span class="bar bar4"></span>
+            </div>
+        </label>
+        <div class="menu-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    {% block content %}{% endblock content %}
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Jola Amodu. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
