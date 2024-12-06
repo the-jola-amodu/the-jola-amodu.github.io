@@ -1,0 +1,32 @@
+.no-post{
+    text-align: center;
+    padding: 4rem;
+}
+
+.post-container{
+    display: grid;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.post-text{
+    display: flex;
+}
+
+.post-title{
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.post-content{
+    font-style: italic;
+    font-size: medium;
+}
+
+video, img{
+    border-radius: 50%;
+    height: 300px;
+}
