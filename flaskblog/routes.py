@@ -10,16 +10,16 @@ def upload_media(form_media):
     random_hex = secrets.token_hex(8)
     _, file_extension = os.path.splitext(form_media.filename)
     media_filename = random_hex + file_extension
-    media_path = os.path.join(app.root_path, 'static/uploaded_media/', media_filename)
+    media_path = os.path.join(app.root_path, 'static/assets/uploaded_media/', media_filename)
 
     if file_extension in ['.jpg', '.png', '.jpeg']:
         clip = ImageClip(form_media)
-        clip_resized = clip.resize(height=300)
+        clip_resized = clip.resized(height=300)
         clip_resized.save_frame(media_path)
 
     elif file_extension in ['.mp4', '.mov', '.avi', '.gif']:
         clip = VideoFileClip(form_media)
-        clip_resized = clip.resize(height=300)
+        clip_resized = clip.resized(height=300)
         clip_resized.write_videofile(media_path)
 
     return media_filename, file_extension

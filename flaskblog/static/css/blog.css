@@ -4,20 +4,22 @@
 }
 
 .post-container{
-    display: grid;
+    display: flex;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
     border-radius: 2rem;
     padding: 1rem;
+    align-items: center;
+    position: relative;
+    margin: 0.3rem;
 }
 
 .post-text{
-    display: flex;
+    margin-left: 1rem;
 }
 
 .post-title{
     font-size: 1rem;
-    line-height: 1.5;
     text-align: left;
 }
 
@@ -26,7 +28,20 @@
     font-size: medium;
 }
 
+.post-date{
+    font-size: small;
+    font-style: italic;
+    color: gray;
+    margin-bottom: 0rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.5rem;
+}
+
 video, img{
-    border-radius: 50%;
-    height: 300px;
+    border-radius: 35%;
+    height: 200px;
+    width: auto;
 }

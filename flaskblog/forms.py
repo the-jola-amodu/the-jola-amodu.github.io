@@ -8,5 +8,5 @@ from flask_ckeditor import CKEditorField
 class PostForm(FlaskForm):
     title = StringField('Title')
     content = CKEditorField('Content', validators=[DataRequired()])
-    media = FileField('Upload media', validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif', 'avi', 'mp4', 'mov'])])
+    media = FileField('Upload media', validators=[FileAllowed(['jpg', 'jpeg', 'png', 'gif', 'mov', 'avi', 'mp4'])])
     submit = SubmitField('Upload')
