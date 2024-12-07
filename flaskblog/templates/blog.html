@@ -1,0 +1,32 @@
+{% extends "layout.html" %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/blog.css') }}"
+/>
+{% endblock head %} {% block content %} {% if posts %} {% for post in posts %}
+<div class="post-container">
+  {% if post.media %} {% if post.media_type == 'image' %}
+  <img
+    src="{{ url_for('static', filename='assets/uploaded_media/' + post.media) }}"
+    alt="Image for {{ post.title }}"
+  />
+  {% elif post.media_type == 'video' %}
+  <img src="{{ post.media }}" alt="GIF for {{ post.title }}" />
+  {% elif post.media_type == 'gif' %}
+  <video>
+    <source src="{{ post.media }}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  {% endif %} {% endif %}
+  <div class="post-text">
+    {% if post.title %}
+    <h2 class="post-title">{{ post.title }}</h2>
+    {% endif %} {{ post.content|safe }}
+  </div>
+  <p class="post-date">{{ post.date_created }}</p>
+</div>
+{% endfor %} {% else %}
+<div class="no-post">
+  <h4>No available blog post. Check back again later!</h4>
+</div>
+{% endif %} {% endblock content %}
