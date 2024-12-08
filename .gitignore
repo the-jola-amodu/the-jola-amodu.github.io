@@ -1,5 +1,7 @@
 venv/
 instance/*
-__pycache__/
+flaskblog/__pycache__/*
+flaskblog/__pycache__/
 !instance/
 *.db
+.env
