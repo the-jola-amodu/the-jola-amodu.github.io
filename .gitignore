@@ -1,5 +1,5 @@
 venv/
 instance/*
-
+__pycache__/
 !instance/
 *.db
