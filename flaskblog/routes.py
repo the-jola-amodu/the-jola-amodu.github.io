@@ -1,7 +1,7 @@
 from flask import render_template, url_for, flash, redirect
 from flaskblog.forms import PostForm
-from flaskblog.models import Post
-from flaskblog import app, db
+from flaskblog import get_db_connection
+from flaskblog import app
 import os, secrets
 from moviepy import ImageClip
 
@@ -26,7 +26,15 @@ def index():
 
 @app.route('/blog')
 def blog_page():
-    posts = Post.query.all()[::-1]
+    connection = get_db_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("SELECT * FROM posts;")
+    posts = cursor.fetchall()[::-1]
+
+    cursor.close()
+    connection.close()
+    
     return render_template('blog.html', posts=posts)
 
 
@@ -34,14 +42,21 @@ def blog_page():
 def admin_page():
     form = PostForm()
     media_file = ''
-    media_type = ''
     if form.validate_on_submit():
         if form.media.data:
             media_file = upload_media(form.media.data)
-            media_type = 'image'
-        post = Post(title=form.title.data, content=form.content.data, media=media_file, media_type=media_type)
-        db.session.add(post)
-        db.session.commit()
+        
+        connection = get_db_connection()
+        cursor = connection.cursor()
+        cursor.execute("""
+            INSERT INTO posts (title, content, media) 
+            VALUES (%s, %s, %s);
+        """, (form.title.data, form.content.data, media_file))
+
+        connection.commit()
+        cursor.close()
+        connection.close()
+
         flash(f'Post Successfully uploaded!', 'success')
         return redirect(url_for('blog_page'))
     return render_template('admin.html', form=form)

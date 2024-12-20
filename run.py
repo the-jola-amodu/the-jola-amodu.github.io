@@ -1,8 +1,9 @@
-from flaskblog import app, db
+from flaskblog import app
+from flaskblog.models import create_posts_table
 
 if __name__ == '__main__':
 
     with app.app_context():
-        db.create_all()
+        create_posts_table()
 
     app.run(debug=True)
