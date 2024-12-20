@@ -26,7 +26,7 @@ def index():
 
 @app.route('/blog')
 def blog_page():
-    posts = Post.query.all()
+    posts = Post.query.all()[::-1]
     return render_template('blog.html', posts=posts)
 
 
