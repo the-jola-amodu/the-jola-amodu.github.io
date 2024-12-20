@@ -3,7 +3,7 @@ from flaskblog.forms import PostForm
 from flaskblog.models import Post
 from flaskblog import app, db
 import os, secrets
-from moviepy import VideoFileClip, ImageClip, AudioFileClip
+from moviepy import ImageClip
 
 
 def upload_media(form_media):
@@ -17,12 +17,7 @@ def upload_media(form_media):
         clip_resized = clip.resized(height=300)
         clip_resized.save_frame(media_path)
 
-    elif file_extension in ['.mp4', '.mov', '.avi', '.gif']:
-        clip = VideoFileClip(form_media)
-        clip_resized = clip.resized(height=300)
-        clip_resized.write_videofile(media_path)
-
-    return media_filename, file_extension
+    return media_filename
 
 @app.route('/')
 def index():
@@ -42,13 +37,8 @@ def admin_page():
     media_type = ''
     if form.validate_on_submit():
         if form.media.data:
-            media_file, ext = upload_media(form.media.data)
-            if ext in ['.jpg', '.png', '.jpeg']:
-                media_type = 'image'
-            elif ext in ['.mp4', '.mov', '.avi']:
-                media_type = 'video'
-            elif ext == '.gif':
-                media_type = 'gif'
+            media_file = upload_media(form.media.data)
+            media_type = 'image'
         post = Post(title=form.title.data, content=form.content.data, media=media_file, media_type=media_type)
         db.session.add(post)
         db.session.commit()
