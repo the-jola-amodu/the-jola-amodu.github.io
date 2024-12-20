@@ -4,16 +4,20 @@
       {
         "src": "run.py",
         "use": "@vercel/python"
+      },
+      {
+        "src": "flaskblog/static/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "flaskblog/templates/**/*",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
-      {
-        "src": "/templates/(.*)",
-        "dest": "/templates/$1"
+        "dest": "/flaskblog/static/$1"
       },
       {
         "src": "/",
