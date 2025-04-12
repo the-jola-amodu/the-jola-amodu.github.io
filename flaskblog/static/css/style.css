@@ -193,7 +193,7 @@ a:hover{
 
 section{
     padding-top: 4vh;
-    height: 96vh;
+    min-height: 96vh;
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
@@ -201,6 +201,7 @@ section{
 
 .section-container{
     display: flex;
+    gap: 4rem;
 }
 
 /* PROFILE SECTION */
@@ -399,7 +400,8 @@ section{
 
 #skills{
     position: relative;
-    height: 80vh;
+    /* min-height: 80vh; */
+    /* margin-bottom: 45px; */
 }
 
 .skill-icon{
@@ -411,17 +413,10 @@ section{
 .skill-box{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2rem;
     justify-content: center;
 }
 
 .skill-container{
-    display: flexbox;
-    flex-direction: column;
-    margin-top: 0.7rem;
-    margin-bottom: 0.7rem;
-    justify-content: center;
-    align-content: center;
     text-align: center;
 }
 
@@ -460,24 +455,24 @@ section{
 }
 
 .color-container{
-    display: flexbox;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
-    border-color: rgb(163, 163, 163);
     background: rgb(250, 250, 250);
     text-align: center;
-
     padding: 0.5rem;
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
 }
 
-.projects-img{
+.projects-img {
+    width: 100%;
+    max-width: 15rem;
+    height: auto;
     border-radius: 2rem;
-    margin: 0.5rem;
-    width: 15rem;
-    height: 15rem;
+    margin: 0.5rem auto;
+    display: block;
 }
 
 .project-title{
@@ -487,7 +482,7 @@ section{
     color: black;
     align-content: center;
     text-decoration: underline;
-    text-decoration-thickness: 0.7x;
+    text-decoration-thickness: 0.7px;
 }
 
 .project-btn{
@@ -498,7 +493,10 @@ section{
 }
 
 .project-text{
-    max-width: 357px;
+    width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .experience-btns{
