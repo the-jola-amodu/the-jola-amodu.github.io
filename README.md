@@ -1,7 +1,35 @@
-﻿# Portfolio_Website
-This is my portfolio website where I would link my projects and upload my experiences. I plan to build some of my web based projects into this website, so look out for these changes!
-My contact information is also provided, so you can reach me if necessary.
+# 🌐 Personal Portfolio Website
 
-P.S: The portfolio website needed to expand and has been moved off Github pages and is now hosted at the-jola-amodu.vercel.app .
+Welcome to the source code for my **personal portfolio website**, built with **HTML**, **CSS**, and **vanilla JavaScript** — no frameworks, no libraries, just clean, hand-crafted code.
 
-As usual, look out for new developments!
+This site is a central hub for showcasing my projects, experiences, and career journey. It’s lightweight, responsive, and continuously evolving — with a blog section that will be updated soon.
+
+---
+
+## 🧠 Features
+
+- **Fully responsive layout** — built from scratch
+- **Smooth navigation** with dynamic JavaScript-based interaction
+- **Projects Showcase** — highlights major technical projects
+- **Experience Section** — a timeline of academic and professional milestones
+- **Contact Information** — easy access to reach out
+- **Blog Page** — currently empty... for now! Stay tuned for updates 👀
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer     | Tools/Tech              |
+|-----------|--------------------------|
+| Structure | HTML5                   |
+| Styling   | CSS3                    |
+| Behavior  | JavaScript (ES6)        |
+| Hosting   | [Vercel]                |
+
+---
+
+## 🚀 Live Site
+
+👉 [Visit My Portfolio](https://the-jola-amodu.vercel.app/)
+
+> Best viewed on modern browsers. Fully responsive on desktop, tablet, and mobile devices.
