@@ -12,7 +12,10 @@
       <div class="section__text self-center text-center">
         <p class="section__text__p1 text-center font-semibold text-[rgb(85,85,85)] dark:text-gray-400">Hello, I'm</p>
         <h1 class="title text-5xl text-center max-sm:text-[2rem] dark:text-white">Jolaoluwa Amodu</h1>
-        <p class="section__text__p2 text-[1.75rem] mb-4 font-semibold text-[rgb(85,85,85)] dark:text-gray-400 max-sm:text-xl">Python Developer/Software Engineer</p>
+        <p class="section__text__p2 text-[1.75rem] mb-4 font-semibold text-[rgb(85,85,85)] dark:text-gray-400 max-sm:text-xl">
+          <span id="typewriter"></span>
+          <span class="typewriter-cursor">|</span>
+        </p>
         <div class="btn-container flex justify-center gap-4 mt-4">
           <button
             class="btn btn-color-2 font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border-2 dark:text-gray-300 dark:hover:bg-neutral-700"
@@ -29,13 +32,13 @@
             src="{{ url_for('static', filename='assets/icons/linkedin.png') }}"
             alt="linkedin profile"
             class="icon cursor-pointer h-8 mt-4"
-            onclick="location.href='https://www.linkedin.com/in/jolaoluwa-amodu/'"
+            onclick="location.href='https://www.linkedin.com/in/jola-amodu/'"
           />
           <img
             src="{{ url_for('static', filename='assets/icons/github.png') }}"
             alt="github profile"
             class="icon cursor-pointer h-8 mt-4"
-            onclick="location.href='https://github.com/I-am-that-guy'"
+            onclick="location.href='https://github.com/the-jola-amodu'"
           />
         </div>
       </div>
@@ -61,7 +64,16 @@
                 <img src="{{ url_for('static', filename='assets/icons/experience.png') }}" alt="suitcase icon from flaticon.com" class="icon cursor-pointer h-8 mt-4">
                 <h3 class="mt-4 ml-2 dark:text-white">Experience Summary</h3>
               </div>
-              <p class="flex ml-4 text-[rgb(85,85,85)] dark:text-gray-400">I will be sure to update this soon!</p>
+              <ul class="ml-8 mr-4 mt-2 mb-2 space-y-2 list-none">
+                <li class="flex items-start text-[rgb(85,85,85)] dark:text-gray-400">
+                  <span class="mr-2 mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[rgb(85,85,85)] dark:bg-gray-400"></span>
+                  <span>Student Researcher at Arkansas Summer Research Institute: 05/2025 - 06/2025</span>
+                </li>
+                <li class="flex items-start text-[rgb(85,85,85)] dark:text-gray-400">
+                  <span class="mr-2 mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[rgb(85,85,85)] dark:bg-gray-400"></span>
+                  <span>Software Design Intern at STAIJA: 11/2023 - 05/2024</span>
+                </li>
+              </ul>
             </div>
             <div class="details-container p-2 flex-1 !bg-white dark:!bg-neutral-800 rounded-[2rem] border-2 border-[rgb(163,163,163)] dark:border-neutral-600">
               <div class="section-headers flex ml-4">
