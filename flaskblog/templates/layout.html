@@ -4,7 +4,6 @@
     {% block head %} {% endblock head %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -12,96 +11,418 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
     <title>Jola's Portfolio</title>
     <link
       rel="icon"
       href="{{ url_for('static', filename='assets/icons/logo.png') }}"
       type="image/png"
     />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/mediaqueries.css') }}"
-    />
+    <style>
+      body {
+        font-family: "Poppins", system-ui;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Hamburger menu animations */
+      .visuallyHidden {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+      }
+
+      .hamburger .bar {
+        transition: all 0.4s ease-in-out;
+      }
+
+      .checkbox1:checked + label > .hamburger1 > .bar1 {
+        transform: rotate(45deg);
+        transform-origin: 5%;
+        width: 41px;
+      }
+
+      .checkbox1:checked + label > .hamburger1 > .bar2 {
+        transform: translateX(-40px);
+        background-color: transparent;
+      }
+
+      .checkbox1:checked + label > .hamburger1 > .bar3 {
+        transform: translateX(40px);
+        background-color: transparent;
+      }
+
+      .checkbox1:checked + label > .hamburger1 > .bar4 {
+        transform-origin: 5%;
+        transform: rotate(-45deg);
+        width: 41px;
+      }
+
+      .checkbox1:checked + label + .menu-links {
+        max-height: 300px;
+      }
+
+      /* Dark mode toggle button */
+      .theme-toggle {
+        width: 60px;
+        height: 30px;
+        background-color: #ddd;
+        border-radius: 15px;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .theme-toggle::after {
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: white;
+        top: 2px;
+        left: 2px;
+        transition: transform 0.3s;
+      }
+
+      .dark .theme-toggle {
+        background-color: #4b5563;
+      }
+
+      .dark .theme-toggle::after {
+        transform: translateX(30px);
+      }
+
+      /* Typewriter cursor */
+      .typewriter-cursor {
+        display: inline-block;
+        animation: blink 1s step-end infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        50% {
+          opacity: 1;
+        }
+        51%,
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">
+  <body
+    class="m-0 p-0 !bg-white dark:!bg-neutral-900 transition-colors duration-300"
+  >
+    <!-- Desktop Navigation -->
+    <nav
+      id="desktop-nav"
+      class="flex justify-around items-center h-[17vh] max-lg:hidden !bg-white dark:!bg-neutral-900 transition-colors duration-300"
+    >
+      <div class="logo text-[2rem] flex cursor-default">
         <a href="/">
           <img
             src="{{ url_for('static', filename='assets/icons/logo.png') }}"
             alt="logo"
-            class="logo-image"
+            class="h-[75px] rounded-full"
           />
         </a>
-        <p>Jola Amodu</p>
+        <p class="mt-[0.6rem] ml-4 dark:text-white">Jola Amodu</p>
       </div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#skills">Skills</a></li>
-          <li><a href="/#projects">Projects</a></li>
-          <li><a href="/#contact">Contact</a></li>
-          <li><a href="/blog">Blog</a></li>
+      <div class="flex items-center gap-8">
+        <ul class="nav-links flex gap-8 list-none text-2xl">
+          <li>
+            <a
+              href="/#about"
+              class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="/#skills"
+              class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="/#projects"
+              class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="/#contact"
+              class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="/blog"
+              class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+              >Blog</a
+            >
+          </li>
         </ul>
+        <button
+          id="theme-toggle-desktop"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
+        ></button>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">
+
+    <!-- Hamburger Navigation -->
+    <nav
+      id="hamburger-nav"
+      class="hidden max-lg:flex justify-around items-center h-[17vh] !bg-white dark:!bg-neutral-900 transition-colors duration-300"
+    >
+      <div class="logo text-[2rem] flex cursor-default max-sm:text-2xl">
         <a href="/">
           <img
             src="{{ url_for('static', filename='assets/icons/logo.png') }}"
             alt="logo"
-            class="logo-image"
+            class="h-[75px] rounded-full"
           />
         </a>
-        <p>Jola Amodu</p>
+        <p class="mt-[0.6rem] ml-4 dark:text-white">Jola Amodu</p>
       </div>
-      <div class="hamburger-menu">
-        <input
-          type="checkbox"
-          id="checkbox1"
-          class="checkbox1 visuallyHidden"
-        />
-        <label for="checkbox1">
-          <div class="hamburger hamburger1">
-            <span class="bar bar1"></span>
-            <span class="bar bar2"></span>
-            <span class="bar bar3"></span>
-            <span class="bar bar4"></span>
+      <div class="flex items-center gap-4">
+        <button
+          id="theme-toggle-mobile"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
+        ></button>
+        <div class="hamburger-menu relative inline-block">
+          <input
+            type="checkbox"
+            id="checkbox1"
+            class="checkbox1 visuallyHidden"
+          />
+          <label for="checkbox1">
+            <div
+              class="hamburger hamburger1 mx-auto mt-[30px] w-[30px] h-[30px] relative"
+            >
+              <span
+                class="bar bar1 block w-[30px] h-1 bg-black rounded absolute top-0"
+              ></span>
+              <span
+                class="bar bar2 block w-[30px] h-1 bg-black rounded absolute top-[13.5px]"
+              ></span>
+              <span
+                class="bar bar3 block w-[30px] h-1 bg-black rounded absolute top-[13.5px] right-0"
+              ></span>
+              <span
+                class="bar bar4 block w-[30px] h-1 bg-black rounded absolute bottom-0"
+              ></span>
+            </div>
+          </label>
+          <div
+            class="menu-links absolute top-full right-0 bg-white dark:bg-neutral-800 w-fit max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+          >
+            <li class="list-none">
+              <a
+                href="/#about"
+                class="block p-2.5 text-center text-2xl text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out max-sm:text-base"
+                >About</a
+              >
+            </li>
+            <li class="list-none">
+              <a
+                href="/#skills"
+                class="block p-2.5 text-center text-2xl text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out max-sm:text-base"
+                >Skills</a
+              >
+            </li>
+            <li class="list-none">
+              <a
+                href="/#projects"
+                class="block p-2.5 text-center text-2xl text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out max-sm:text-base"
+                >Projects</a
+              >
+            </li>
+            <li class="list-none">
+              <a
+                href="/#contact"
+                class="block p-2.5 text-center text-2xl text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out max-sm:text-base"
+                >Contact</a
+              >
+            </li>
+            <li class="list-none">
+              <a
+                href="/blog"
+                class="block p-2.5 text-center text-2xl text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out max-sm:text-base"
+                >Blog</a
+              >
+            </li>
           </div>
-        </label>
-        <div class="menu-links">
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#skills">Skills</a></li>
-          <li><a href="/#projects">Projects</a></li>
-          <li><a href="/#contact">Contact</a></li>
-          <li><a href="/blog">Blog</a></li>
         </div>
       </div>
     </nav>
+
+    <!-- Flash Messages -->
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %}
     <div class="alert alert-{{ category }}">{{ message }}</div>
-    {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock
-    content %}
-    <footer>
-      <nav>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <!-- Main Content -->
+    {% block content %}{% endblock content %}
+
+    <!-- Footer -->
+    <footer
+      class="h-[26vh] m-0.5 max-sm:h-[40vh] !bg-white dark:!bg-neutral-900 transition-colors duration-300"
+    >
+      <nav class="max-sm:h-fit max-sm:mb-8">
         <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#skills">Skills</a></li>
-            <li><a href="/#projects">Projects</a></li>
-            <li><a href="/#contact">Contact</a></li>
-            <li><a href="/blog">Blog</a></li>
+          <ul
+            class="nav-links flex gap-8 list-none text-2xl justify-center max-sm:flex-col max-sm:gap-2 max-sm:text-center max-sm:text-base"
+          >
+            <li>
+              <a
+                href="/#about"
+                class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="/#skills"
+                class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                href="/#projects"
+                class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="/#contact"
+                class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="/blog"
+                class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 dark:hover:text-gray-400 hover:underline hover:decoration-[rgb(181,181,181)]"
+                >Blog</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2024 Jola Amodu. All Rights Reserved.</p>
+      <p class="text-center text-[rgb(85,85,85)] dark:text-gray-400">
+        Copyright &#169; 2026 Jola Amodu. All Rights Reserved.
+      </p>
     </footer>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+      // Check for saved theme preference or default to light mode
+      const theme = localStorage.getItem("theme") || "light";
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.body.classList.add("dark");
+      }
+
+      // Toggle function
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+        document.body.classList.toggle("dark");
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      }
+
+      // Add event listeners to both toggle buttons
+      document
+        .getElementById("theme-toggle-desktop")
+        ?.addEventListener("click", toggleTheme);
+      document
+        .getElementById("theme-toggle-mobile")
+        ?.addEventListener("click", toggleTheme);
+    </script>
+
+    <!-- Typewriter Effect Script -->
+    <script>
+      const typewriterElement = document.getElementById("typewriter");
+      if (typewriterElement) {
+        const words = [
+          "Full-Stack Developer",
+          "AI & Automation Enthusiast",
+          "\"If it exists, we can automate\"",
+          "Visual Storyteller",
+          "Digital Product Builder",
+          "Dark Mode Evangelist"
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function type() {
+          const currentWord = words[wordIndex];
+
+          if (isDeleting) {
+            typewriterElement.textContent = currentWord.substring(
+              0,
+              charIndex - 1
+            );
+            charIndex--;
+            typingSpeed = 50;
+          } else {
+            typewriterElement.textContent = currentWord.substring(
+              0,
+              charIndex + 1
+            );
+            charIndex++;
+            typingSpeed = 100;
+          }
+
+          if (!isDeleting && charIndex === currentWord.length) {
+            // Pause at end of word
+            typingSpeed = 2000;
+            isDeleting = true;
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typingSpeed = 500;
+          }
+
+          setTimeout(type, typingSpeed);
+        }
+
+        // Start typewriter effect
+        type();
+      }
+    </script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script

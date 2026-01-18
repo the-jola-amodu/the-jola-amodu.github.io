@@ -1,208 +1,230 @@
 {% extends "layout.html" %}
 {% block content %}
-    <section id="profile">
-      <div class="section__pic-container">
+    <!-- PROFILE SECTION -->
+    <section id="profile" class="relative flex justify-center gap-20 h-[70vh] pt-16 mx-40 box-border min-h-fit max-xl:h-[83vh] max-xl:mb-24 max-lg:block max-lg:static max-lg:mx-[5%] max-sm:h-[83vh] max-sm:mb-0">
+      <div class="section__pic-container flex h-[400px] w-[400px] my-auto mx-0 max-lg:w-[275px] max-lg:h-[275px] max-lg:mx-auto max-lg:mb-8 max-sm:w-auto max-sm:h-[46vh] max-sm:justify-center">
         <img
           src="{{ url_for('static', filename='assets/images/headshot.png') }}"
           alt="Jola Amodu Profile pic"
-          class="profile-image"
+          class="h-[500px] w-[450px] rounded-full max-lg:h-80 max-lg:w-[270px]"
         />
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Jolaoluwa Amodu</h1>
-        <p class="section__text__p2">Python Developer/Software Engineer</p>
-        <div class="btn-container">
+      <div class="section__text self-center text-center">
+        <p class="section__text__p1 text-center font-semibold text-[rgb(85,85,85)] dark:text-gray-400">Hello, I'm</p>
+        <h1 class="title text-5xl text-center max-sm:text-[2rem] dark:text-white">Jolaoluwa Amodu</h1>
+        <p class="section__text__p2 text-[1.75rem] mb-4 font-semibold text-[rgb(85,85,85)] dark:text-gray-400 max-sm:text-xl">
+          <span id="typewriter"></span>
+          <span class="typewriter-cursor">|</span>
+        </p>
+        <div class="btn-container flex justify-center gap-4 mt-4">
           <button
-            class="btn btn-color-2"
+            class="btn btn-color-2 font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border-2 dark:text-gray-300 dark:hover:bg-neutral-700"
             onclick="window.open('{{ url_for('static', filename='assets/documents/Jolas CV.pdf') }}')"
           >
             Download CV
           </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          <button class="btn btn-color-1 font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-[rgb(53,53,53)] dark:bg-neutral-700 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-neutral-800" onclick="location.href='./#contact'">
             Contact me!
           </button>
         </div>
-        <div id="socials-container">
+        <div id="socials-container" class="flex justify-center mt-4 gap-4">
           <img
             src="{{ url_for('static', filename='assets/icons/linkedin.png') }}"
             alt="linkedin profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/jolaoluwa-amodu/'"
+            class="icon cursor-pointer h-8 mt-4"
+            onclick="location.href='https://www.linkedin.com/in/jola-amodu/'"
           />
           <img
             src="{{ url_for('static', filename='assets/icons/github.png') }}"
             alt="github profile"
-            class="icon"
-            onclick="location.href='https://github.com/I-am-that-guy'"
+            class="icon cursor-pointer h-8 mt-4"
+            onclick="location.href='https://github.com/the-jola-amodu'"
           />
         </div>
       </div>
-      <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow" onclick="location.href='./#about'">
+      <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow absolute right-[-5rem] bottom-10 cursor-pointer h-8 mt-4 max-lg:hidden" onclick="location.href='./#about'">
     </section>
-    <section id="about">
-      <p class="section__text__p1">
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="mt-32 relative pt-16 mx-40 box-border min-h-fit max-lg:mx-[5%]">
+      <p class="section__text__p1 text-center font-semibold text-[rgb(85,85,85)] dark:text-gray-400">
         Get To Know More
       </p>
-      <h1 class="title"></p>
+      <h1 class="title text-5xl text-center max-sm:text-[2rem] dark:text-white">
         About Me
       </h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img src="{{ url_for('static', filename='assets/images/Untitled.png') }}" alt="Another profile pic" class="about-pic">
+      <div class="section-container flex gap-16 h-[80%] max-lg:block max-lg:h-fit">
+        <div class="section__pic-container flex h-[400px] w-[680px] my-auto mx-0 max-lg:w-[275px] max-lg:h-[275px] max-lg:mx-auto max-lg:mb-8 max-sm:w-auto max-sm:h-[46vh] max-sm:justify-center">
+          <img src="{{ url_for('static', filename='assets/images/Untitled.png') }}" alt="Another profile pic" class="about-pic rounded-[2rem]">
         </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <div class="section-headers">
-                <img src="{{ url_for('static', filename='assets/icons/experience.png') }}" alt="suitcase icon from flaticon.com" class="icon">
-                <h3>Experience Summary</h3>
+        <div class="about-details-container flex justify-center flex-col">
+          <div class="about-containers flex mb-8 mt-8 gap-8 flex-wrap max-xl:flex-wrap max-lg:mt-0">
+            <div class="details-container p-2 flex-1 !bg-white dark:!bg-neutral-800 rounded-[2rem] border-2 border-[rgb(163,163,163)] dark:border-neutral-600">
+              <div class="section-headers flex ml-4">
+                <img src="{{ url_for('static', filename='assets/icons/experience.png') }}" alt="suitcase icon from flaticon.com" class="icon cursor-pointer h-8 mt-4">
+                <h3 class="mt-4 ml-2 dark:text-white">Experience Summary</h3>
               </div>
-              <p>I will be sure to update this soon!</p>
+              <ul class="ml-8 mr-4 mt-2 mb-2 space-y-2 list-none">
+                <li class="flex items-start text-[rgb(85,85,85)] dark:text-gray-400">
+                  <span class="mr-2 mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[rgb(85,85,85)] dark:bg-gray-400"></span>
+                  <span><strong>Student Researcher</strong> at Arkansas Summer Research Institute: 05/2025 - 06/2025</span>
+                </li>
+                <li class="flex items-start text-[rgb(85,85,85)] dark:text-gray-400">
+                  <span class="mr-2 mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[rgb(85,85,85)] dark:bg-gray-400"></span>
+                  <span><strong>Software Design Intern</strong> at STAIJA: 11/2023 - 05/2024</span>
+                </li>
+              </ul>
             </div>
-            <div class="details-container">
-              <div class="section-headers">
-                <img src="{{ url_for('static', filename='assets/icons/education.png') }}" alt="education icon" class="icon">
-                <h3>Education</h3>
+            <div class="details-container p-2 flex-1 !bg-white dark:!bg-neutral-800 rounded-[2rem] border-2 border-[rgb(163,163,163)] dark:border-neutral-600">
+              <div class="section-headers flex ml-4">
+                <img src="{{ url_for('static', filename='assets/icons/education.png') }}" alt="education icon" class="icon cursor-pointer h-8 mt-4">
+                <h3 class="mt-4 ml-2 dark:text-white">Education</h3>
               </div>
-                <p>Bachelors of Science in Computer Science</p>
-                <p class="mini-italic">Minor in Business Administration</p>
+                <p class="flex ml-4 text-[rgb(85,85,85)] dark:text-gray-400">Bachelors of Science in Computer Science</p>
+                <p class="mini-italic text-sm italic mb-2 flex ml-4 text-[rgb(85,85,85)] dark:text-gray-400 max-lg:hidden">Minor in Business Administration</p>
               </div>  
                 </div> 
                 <div class="text-container">
-                  <p>I am currently a freshman student at Fisk University with interests in software engineering, automation and electronics. I am a Python developer with experience in website development. </p>
-                  <p>I would describe myself as motivated, meticulous and inventive. I also love to connect concepts across my areas of interests to foster innovation and weave a bit of creativity into my technical work. </p> 
+                  <p class="mt-2 mb-2 text-[rgb(85,85,85)] dark:text-gray-400 max-sm:text-justify">I am currently a freshman student at Fisk University with interests in software engineering, automation and electronics. I am a Python developer with experience in website development. </p>
+                  <p class="mt-2 mb-2 text-[rgb(85,85,85)] dark:text-gray-400 max-sm:text-justify">I would describe myself as motivated, meticulous and inventive. I also love to connect concepts across my areas of interests to foster innovation and weave a bit of creativity into my technical work. </p> 
                 </div>
               </div>
               </div>
-            </div>
-         <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow" onclick="location.href='./#skills'">
+         <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow absolute right-[-5rem] bottom-10 cursor-pointer h-8 mt-4 max-lg:hidden" onclick="location.href='./#skills'">
     </section>
-    <section id="skills">
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="relative pt-16 mx-40 box-border min-h-fit max-lg:h-[50vh] max-lg:mx-[5%]">
       <div class="skill-section">
         <div class="skill-header">
-          <p class="section__text__p1">Curious about</p>
-        <h1 class="title">My Skills?</h1>
-          <p class="mini-italic" style="margin-top: 1rem; margin-left: 5px;">(hover to learn more)</p>
+          <p class="section__text__p1 text-center font-semibold text-[rgb(85,85,85)] dark:text-gray-400">Curious about</p>
+        <h1 class="title text-5xl text-center max-sm:text-[2rem] dark:text-white">My Skills?</h1>
+          <p class="mini-italic text-sm italic mb-2 mt-4 ml-[5px] max-lg:hidden dark:text-gray-400">(hover to learn more)</p>
         </div>
-        <div class="skill-box">
-          <div class="skill-container">
-            <img src="{{ url_for('static', filename='assets/icons/python.png') }}" alt="python icon from flaticon" class="skill-icon">
-            <p class="skill-text">Python</p>
-            <p class="skill-subtext">3 years experience, Proficient💪</p>
+        <div class="skill-box flex flex-wrap justify-center gap-4">
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/python.png') }}" alt="python icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">Python</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">3 years experience💪</p>
           </div>
-          <div class="skill-container">
-            <img src="{{ url_for('static', filename='assets/icons/css-3.png') }}" alt="css icon from flaticon" class="skill-icon">
-            <p class="skill-text">CSS</p>
-            <p class="skill-subtext">2 years experience, Intermediate👌</p>
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/css-3.png') }}" alt="css icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">CSS</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">2 years experience👌</p>
           </div>
-          <div class="skill-container">
-            <img src="{{ url_for('static', filename='assets/icons/html.png') }}" alt="html icon from flaticon" class="skill-icon">
-            <p class="skill-text">HTML</p>
-            <p class="skill-subtext">2 years experience, Intermediate👌</p>
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/html.png') }}" alt="html icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">HTML</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">2 years experience👌</p>
           </div>
-          <div class="skill-container">
-            <img src="{{ url_for('static', filename='assets/icons/java-script.png') }}" alt="javascript icon from flaticon" class="skill-icon">
-            <p class="skill-text">JavaScript</p>
-            <p class="skill-subtext">1 year experience, Basic👍</p>
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/java-script.png') }}" alt="javascript icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">JavaScript</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">1 year experience👍</p>
           </div>
-          <div class="skill-container">
-            <img src="{{ url_for('static', filename='assets/icons/flask.png') }}" alt="flask icon from flaticon" class="skill-icon">
-            <p class="skill-text">Flask Framework</p>
-            <p class="skill-subtext">1 year experience, Intermediate👌</p>
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/flask.png') }}" alt="flask icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">Flask Framework</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">2 years experience👌</p>
           </div>
-          <div class="skill-container">
-            <img src="{{ url_for('static', filename='assets/icons/c-.png') }}" alt="c++ icon from flaticon" class="skill-icon">
-            <p class="skill-text">C++</p>
-            <p class="skill-subtext">1 year experience, Intermediate👌</p>
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/c-.png') }}" alt="c++ icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">C++</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">2 years experience👌</p>
           </div>
-          <div class="skill-container">
-            <img src="{{ url_for('static', filename='assets/icons/figma.png') }}" alt="figma icon from flaticon" class="skill-icon">
-            <p class="skill-text">Figma</p>
-            <p class="skill-subtext">1 year experience, Basic👍</p>
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/figma.png') }}" alt="figma icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">Figma</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">1 year experience👍</p>
           </div>
-          <div class="skill-container">
-            <img src="{{ url_for('static', filename='assets/icons/git.png') }}" alt="git icon from flaticon" class="skill-icon">
-            <p class="skill-text">Git</p>
-            <p class="skill-subtext">1 year experience, Intermediate👌</p>
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/git.png') }}" alt="git icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">Git</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">3 years experience💪</p>
           </div>        
-          <div class="skill-container">
-            <img src="{{ url_for('static', filename='assets/icons/atom.png') }}" alt="react icon from flaticon" class="skill-icon">
-            <p class="skill-text">React</p>
-            <p class="skill-subtext">1 year experience, Intermediate👌</p>
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/atom.png') }}" alt="react icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">React</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">2 years experience👌</p>
+          </div>        
+          <div class="skill-container flex flex-col items-center max-lg:mx-2 max-lg:mb-3 group">
+            <img src="{{ url_for('static', filename='assets/icons/arduino.png') }}" alt="react icon from flaticon" class="skill-icon cursor-pointer h-20 w-20 max-lg:h-[50px] max-lg:w-[50px]">
+            <p class="skill-text underline italic opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:opacity-100 max-lg:translate-y-0 max-lg:text-[9px] dark:text-gray-300">Arduino</p>
+            <p class="skill-subtext text-sm opacity-0 translate-y-5 transition-all duration-[0.4s] ease-in-out group-hover:opacity-100 group-hover:translate-y-0 max-lg:hidden max-lg:translate-y-0 dark:text-gray-400">2 years experience👌</p>
           </div>        
         </div>
          </div>
-      <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow" onclick="location.href='./#projects'">
+      <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow absolute right-[-5rem] bottom-10 cursor-pointer h-8 mt-4 max-lg:hidden" onclick="location.href='./#projects'">
     </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My</p>
-      <h1 class="title">Recent Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="color-container">
-            <img src="{{ url_for('static', filename='assets/icons/project1.png') }}" alt="project-1" class="projects-img">
-            <h2 class="experience-subtitle project-title">AI Powered texteditor</h2>
-            <p class="project-text">A text editor with AI powered paraphrasing, summary and content generation</p>
-            <div class="experience-btns">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/the-jola-amodu/Project-Lytrally'">Github</button>
-              <button disabled class="btn btn-color-2 project-btn" onclick="location.href='./#projects'">Live Demo</button>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="relative pt-16 mx-40 box-border min-h-fit max-lg:mx-[5%]">
+      <p class="section__text__p1 text-center font-semibold text-[rgb(85,85,85)] dark:text-gray-400">Browse My</p>
+      <h1 class="title text-5xl text-center max-sm:text-[2rem] dark:text-white">Recent Projects</h1>
+      <div class="experience-details-container max-lg:mt-8">
+        <div class="about-containers flex mb-8 mt-8 gap-8 flex-wrap max-xl:flex-wrap max-lg:mt-0">
+          <div class="color-container flex flex-col content-center justify-center !bg-[rgb(250,250,250)] dark:!bg-neutral-800 text-center p-2 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 w-[290px]">
+            <img src="{{ url_for('static', filename='assets/icons/project1.png') }}" alt="project-1" class="projects-img w-full max-w-[15rem] h-auto rounded-[2rem] my-2 mx-auto block">
+            <h2 class="experience-subtitle project-title my-1 max-w-[330px] h-[74px] text-black dark:text-white content-center underline [text-decoration-thickness:0.7px]">AI Powered texteditor</h2>
+            <p class="project-text w-[270px] ml-auto mr-auto text-center text-[rgb(85,85,85)] dark:text-gray-400">A text editor with AI powered paraphrasing, summary and content generation</p>
+            <div class="experience-btns justify-center flex gap-4">
+              <button class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='https://github.com/the-jola-amodu/Project-Lytrally'">Github</button>
+              <button disabled class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='./#projects'">Live Demo</button>
             </div>
           </div>
-          <div class="color-container">
-            <img src="{{ url_for('static', filename='assets/icons/project2.png') }}" alt="project-2" class="projects-img">
-            <h2 class="experience-subtitle project-title">Interface for DJI Tello Drones</h2>
-            <p class="project-text">Drone control with 3 DoF, live video feed, image capture, face detection and tracking</p>
-            <div class="experience-btns">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/the-jola-amodu/Drone-Programming-with-Python-tkinter-interface'">Github</button>
-              <button disabled class="btn btn-color-2 project-btn" onclick="location.href='./#projects'">Live Demo</button>
+          <div class="color-container flex flex-col content-center justify-center !bg-[rgb(250,250,250)] dark:!bg-neutral-800 text-center p-2 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 w-[290px]">
+            <img src="{{ url_for('static', filename='assets/icons/project2.png') }}" alt="project-2" class="projects-img w-full max-w-[15rem] h-auto rounded-[2rem] my-2 mx-auto block">
+            <h2 class="experience-subtitle project-title my-1 max-w-[330px] h-[74px] text-black dark:text-white content-center underline [text-decoration-thickness:0.7px]">Interface for DJI Tello Drones</h2>
+            <p class="project-text w-[270px] ml-auto mr-auto text-center text-[rgb(85,85,85)] dark:text-gray-400">Drone control with 3 DoF, live video feed, image capture, face detection and tracking</p>
+            <div class="experience-btns justify-center flex gap-4">
+              <button class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='https://github.com/the-jola-amodu/Drone-Programming-with-Python-tkinter-interface'">Github</button>
+              <button disabled class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='./#projects'">Live Demo</button>
             </div>
           </div>
-          <div class="color-container">
-            <img src="{{ url_for('static', filename='assets/icons/project3.png') }}" alt="project-3" class="projects-img">
-            <h2 class="experience-subtitle project-title">Chef Claude</h2>
-            <p class="project-text">Generate recipes based on ingredients you have available to you!</p>
-            <div class="experience-btns">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/the-jola-amodu/React-mini-projects'">Github</button>
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://sous-chef-claude.netlify.app/'">Live Demo</button>
+          <div class="color-container flex flex-col content-center justify-center !bg-[rgb(250,250,250)] dark:!bg-neutral-800 text-center p-2 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 w-[290px]">
+            <img src="{{ url_for('static', filename='assets/icons/project3.png') }}" alt="project-3" class="projects-img w-full max-w-[15rem] h-auto rounded-[2rem] my-2 mx-auto block">
+            <h2 class="experience-subtitle project-title my-1 max-w-[330px] h-[74px] text-black dark:text-white content-center underline [text-decoration-thickness:0.7px]">Chef Claude</h2>
+            <p class="project-text w-[270px] ml-auto mr-auto text-center text-[rgb(85,85,85)] dark:text-gray-400">Generate recipes based on ingredients you have available to you!</p>
+            <div class="experience-btns justify-center flex gap-4">
+              <button class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='https://github.com/the-jola-amodu/React-mini-projects'">Github</button>
+              <button class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='https://sous-chef-claude.netlify.app/'">Live Demo</button>
             </div>
           </div>
-          <div class="color-container">
-            <img src="{{ url_for('static', filename='assets/icons/project4.png') }}" alt="project-4" class="projects-img">
-            <h2 class="experience-subtitle project-title">React mini games</h2>
-            <p class="project-text">Need a break? Try out one of these mini games!</p>
-            <div class="experience-btns">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://swe-endgame.netlify.app/'">Assembly Endgame</button>
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://ten-die-tenzies.netlify.app/'">Tenzies</button>
+          <div class="color-container flex flex-col content-center justify-center !bg-[rgb(250,250,250)] dark:!bg-neutral-800 text-center p-2 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 w-[290px]">
+            <img src="{{ url_for('static', filename='assets/icons/project4.png') }}" alt="project-4" class="projects-img w-full max-w-[15rem] h-auto rounded-[2rem] my-2 mx-auto block">
+            <h2 class="experience-subtitle project-title my-1 max-w-[330px] h-[74px] text-black dark:text-white content-center underline [text-decoration-thickness:0.7px]">React mini games</h2>
+            <p class="project-text w-[270px] ml-auto mr-auto text-center text-[rgb(85,85,85)] dark:text-gray-400">Need a break? Try out one of these mini games!</p>
+            <div class="experience-btns justify-center flex gap-4">
+              <button class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='https://swe-endgame.netlify.app/'">Assembly Endgame</button>
+              <button class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='https://ten-die-tenzies.netlify.app/'">Tenzies</button>
             </div>
           </div>
-          <div class="color-container">
-            <img src="{{ url_for('static', filename='assets/icons/project5.png') }}" alt="project-5" class="projects-img">
-            <h2 class="experience-subtitle project-title">Gemini + RAG</h2>
-            <p class="project-text">A RAG pipeline that feeds Gemini API with information sourced from my portfolio and LinkedIn (ethically, yes)</p>
-            <div class="experience-btns">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/the-jola-amodu/React-Project-1'">Github</button>
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://jairag.vercel.app/'">Live Demo</button>
+          <div class="color-container flex flex-col content-center justify-center !bg-[rgb(250,250,250)] dark:!bg-neutral-800 text-center p-2 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 w-[290px]">
+            <img src="{{ url_for('static', filename='assets/icons/project5.png') }}" alt="project-5" class="projects-img w-full max-w-[15rem] h-auto rounded-[2rem] my-2 mx-auto block">
+            <h2 class="experience-subtitle project-title my-1 max-w-[330px] h-[74px] text-black dark:text-white content-center underline [text-decoration-thickness:0.7px]">Gemini + RAG</h2>
+            <p class="project-text w-[270px] ml-auto mr-auto text-center text-[rgb(85,85,85)] dark:text-gray-400">A RAG pipeline that feeds Gemini API with information sourced from my portfolio and LinkedIn (ethically, yes)</p>
+            <div class="experience-btns justify-center flex gap-4">
+              <button class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='https://github.com/the-jola-amodu/React-Project-1'">Github</button>
+              <button class="btn btn-color-2 project-btn font-semibold transition-all duration-300 ease-in-out p-4 w-32 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-none text-black dark:text-gray-300 border-[rgb(163,163,163)] dark:border-gray-500 mb-1 mt-1 hover:cursor-pointer hover:bg-[rgb(53,53,53)] hover:text-white hover:border-white hover:border dark:hover:bg-gray-700" onclick="location.href='https://jairag.vercel.app/'">Live Demo</button>
             </div>
           </div>
           </div>
           </div>
-        </div>
-        </div>
-      </div>
-      <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow" onclick="location.href='./#contact'">
+      <img src="{{ url_for('static', filename='assets/icons/arrow.png') }}" alt="arrow down" class="icon arrow absolute right-[-5rem] bottom-10 cursor-pointer h-8 mt-4 max-lg:hidden" onclick="location.href='./#contact'">
     </section>
-    <section id="contact">
-      <p class="section__text__p1">Get In Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img src="{{ url_for('static', filename='assets/icons/email.png') }}" alt="email icon" class="icon contact-icon email-icon">
-          <p><a href="mailto:jola47amodu@gmail.com">jola47amodu@gmail.com</a></p>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="flex justify-center flex-col h-[70vh] pt-16 mx-40 box-border min-h-fit max-lg:mx-[5%] max-sm:h-[40vh]">
+      <p class="section__text__p1 text-center font-semibold text-[rgb(85,85,85)] dark:text-gray-400">Get In Touch</p>
+      <h1 class="title text-5xl text-center max-sm:text-[2rem] dark:text-white">Contact Me</h1>
+      <div class="contact-info-upper-container flex justify-center rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 !bg-[rgb(250,250,250)] dark:!bg-neutral-800 my-8 mx-auto p-2 max-sm:flex-wrap">
+        <div class="contact-info-container flex items-center justify-center gap-2 mx-4 my-4 max-sm:mx-0 max-sm:my-0">
+          <img src="{{ url_for('static', filename='assets/icons/email.png') }}" alt="email icon" class="icon contact-icon email-icon cursor-default h-10">
+          <p class="text-lg text-[rgb(85,85,85)] dark:text-gray-400 max-sm:text-base"><a href="mailto:jola47amodu@gmail.com" class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 hover:underline hover:decoration-[rgb(181,181,181)]">jola47amodu@gmail.com</a></p>
         </div>
-        <div class="contact-info-container">
-          <img src="{{ url_for('static', filename='assets/icons/linkedin.png') }}" alt="linkedin icon" class="icon contact-icon">
-          <p><a href="https://www.linkedin.com/in/jolaoluwa-amodu">LinkedIn</a></p>
+        <div class="contact-info-container flex items-center justify-center gap-2 mx-4 my-4 max-sm:mx-0 max-sm:my-0">
+          <img src="{{ url_for('static', filename='assets/icons/linkedin.png') }}" alt="linkedin icon" class="icon contact-icon cursor-default h-10">
+          <p class="text-lg text-[rgb(85,85,85)] dark:text-gray-400 max-sm:text-base"><a href="https://www.linkedin.com/in/jolaoluwa-amodu" class="text-black dark:text-gray-300 no-underline transition-all duration-300 ease-in-out hover:text-gray-500 hover:underline hover:decoration-[rgb(181,181,181)]">LinkedIn</a></p>
         </div>
         </div>
       </div>
