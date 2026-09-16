@@ -77,8 +77,9 @@
           </legend>
           <p class="text-[rgb(85,85,85)] dark:text-gray-300 mb-4 max-sm:text-sm">
             Save your LinkedIn profile as a PDF (<span class="italic">Profile&nbsp;&rarr;&nbsp;More&nbsp;&rarr;&nbsp;Save to PDF</span>) and upload it here.
-            It is served at <code class="px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-700 text-sm">/linkedin</code>
-            and linked from the portfolio's contact section.
+            Its <span class="font-semibold">experiences are read automatically</span> &mdash; company, date and role, deduped &mdash;
+            to keep the Experience page in sync. Projects are not touched here (GitHub owns those).
+            The PDF is also served at <code class="px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-700 text-sm">/linkedin</code>.
           </p>
 
           <div class="mb-6">
@@ -97,6 +98,42 @@
 
           <div class="mt-6">
             {{ linkedin_form.submit(class="font-semibold transition-all duration-300 ease-in-out py-3 px-8 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-[rgb(53,53,53)] dark:bg-neutral-700 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-neutral-800 text-lg") }}
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- ── CARD 3: Resume PDF ── -->
+    <div class="post-form !bg-white dark:!bg-neutral-800 rounded-[2rem] border-2 border-[rgb(163,163,163)] dark:border-neutral-600 p-8 max-sm:p-4 shadow-xl">
+      <form method="POST" action="" enctype="multipart/form-data">
+        {{ resume_form.hidden_tag() }}
+        <fieldset>
+          <legend class="text-3xl font-semibold mb-2 pb-4 border-b-2 border-[rgb(163,163,163)] dark:border-neutral-600 text-black dark:text-white">
+            Resume (PDF)
+          </legend>
+          <p class="text-[rgb(85,85,85)] dark:text-gray-300 mb-4 max-sm:text-sm">
+            Upload your resume as a PDF and it becomes the site's downloadable CV at
+            <code class="px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-700 text-sm">/resume</code>
+            &mdash; stored only, never parsed. Experiences come from the LinkedIn PDF above;
+            projects come from GitHub.
+          </p>
+
+          <div class="mb-6">
+            {{ resume_form.resume_pdf.label(class="block text-lg font-semibold mb-2 text-[rgb(85,85,85)] dark:text-gray-300") }}
+            <div class="mt-2">
+              {{ resume_form.resume_pdf(class="block w-full text-sm text-[rgb(85,85,85)] dark:text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-2 file:border-[rgb(53,53,53)] dark:file:border-neutral-600 file:text-sm file:font-semibold file:bg-white dark:file:bg-neutral-700 file:text-black dark:file:text-gray-300 hover:file:bg-[rgb(53,53,53)] hover:file:text-white dark:hover:file:bg-neutral-600 file:transition-all file:duration-300 file:cursor-pointer") }}
+            </div>
+            {% if resume_form.resume_pdf.errors %}
+              <div class="mt-2">
+                {% for error in resume_form.resume_pdf.errors %}
+                  <span class="text-red-500 text-sm block">{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="mt-6">
+            {{ resume_form.submit(class="font-semibold transition-all duration-300 ease-in-out py-3 px-8 rounded-[2rem] border-2 border-[rgb(53,53,53)] dark:border-neutral-600 bg-[rgb(53,53,53)] dark:bg-neutral-700 text-white hover:cursor-pointer hover:bg-black dark:hover:bg-neutral-800 text-lg") }}
           </div>
         </fieldset>
       </form>

@@ -43,7 +43,7 @@
             type="button"
             class="term-cmd warm"
             data-dm-cmd="resume"
-            data-resume-url="{{ url_for('static', filename='assets/documents/Jolas CV.pdf') }}"
+            data-resume-url="/resume"
           >$ ./resume.pdf</button>
           <button
             type="button"
@@ -80,7 +80,7 @@
                 <button
                   type="button"
                   class="dm-hero-btn"
-                  onclick="window.open('{{ url_for('static', filename='assets/documents/Jolas CV.pdf') }}')"
+                  onclick="window.open('/resume')"
                 >
                   Download CV
                 </button>
@@ -137,7 +137,7 @@
           <div class="dm-skill-grid">
             {% for s in resume.get('skills', []) %}
             <div class="dm-skill sculpted-frame dm-reveal">
-              <img src="{{ url_for('static', filename='assets/icons/' + s.icon) }}" alt="{{ s.name }} icon" />
+              {% if s.icon %}<img src="{{ url_for('static', filename='assets/icons/' + s.icon) }}" alt="{{ s.name }} icon" />{% endif %}
               <span class="dm-skill-name">{{ s.name }}</span>
               <span class="dm-skill-level">{{ s.level }}</span>
             </div>
@@ -186,7 +186,7 @@
           </div>
         </section>
 
-        <!-- ─────────── EXPERIENCE (resume.json driven) ─────────── -->
+        <!-- ─────────── EXPERIENCE (LinkedIn-driven, uniform entries) ─────────── -->
         <section class="dm-view" data-view="experience" id="experience">
           <p class="dm-kicker">cat content/resume.json --section=work</p>
           <h2 class="dm-h2">Experience</h2>
@@ -194,13 +194,8 @@
             {% for job in resume.get('work', []) %}
             <div class="dm-timeline-item dm-reveal">
               <p class="dm-timeline-period">{{ job.period }}</p>
-              <h3 class="dm-timeline-role">{{ job.role }}</h3>
-              <p class="dm-timeline-org">{{ job.org }}</p>
-              <ul class="mt-2 space-y-1">
-                {% for point in job.get('highlights', []) %}
-                <li><span class="dm-accent">›</span> {{ point }}</li>
-                {% endfor %}
-              </ul>
+              <h3 class="dm-timeline-role">{{ job.company }}</h3>
+              {% if job.role %}<p class="dm-timeline-org">{{ job.role }}</p>{% endif %}
             </div>
             {% endfor %}
           </div>
