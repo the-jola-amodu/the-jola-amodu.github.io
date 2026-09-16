@@ -18,3 +18,11 @@ class LinkedInForm(FlaskForm):
         validators=[FileAllowed(['pdf'], message='PDF files only!')]
     )
     submit = SubmitField('Upload LinkedIn PDF')
+
+
+class ResumeForm(FlaskForm):
+    resume_pdf = FileField(
+        'Resume (PDF)',
+        validators=[FileAllowed(['pdf'], message='PDF files only!')]
+    )
+    submit = SubmitField('Upload Resume')

@@ -15,22 +15,84 @@
   },
   "work": [
     {
-      "role": "Student Researcher",
-      "org": "Arkansas Summer Research Institute",
-      "period": "05/2025 — 06/2025",
-      "highlights": [
-        "Participated in a structured summer research programme",
-        "Collaborated with faculty and peers on applied research workflows"
-      ]
+      "company": "ColorStack",
+      "period": "August 2026 - Present",
+      "role": "Fisk Chapter Secretary"
     },
     {
-      "role": "Software Design Intern",
-      "org": "STAIJA",
-      "period": "11/2023 — 05/2024",
-      "highlights": [
-        "Designed and prototyped software features end to end",
-        "Worked across the stack from interface concepts to implementation"
-      ]
+      "company": "Bloomberg",
+      "period": "August 2026 - September 2026",
+      "role": "HBCU Academy of Excellence"
+    },
+    {
+      "company": "Alcon",
+      "period": "August 2026",
+      "role": "R&D Extern"
+    },
+    {
+      "company": "BASTA",
+      "period": "July 2026 - Present",
+      "role": "Google x Basta Code2Career Cohort Member"
+    },
+    {
+      "company": "Adobe",
+      "period": "June 2026 - Present",
+      "role": "Student Ambassador"
+    },
+    {
+      "company": "AI4ALL",
+      "period": "May 2026 - Present",
+      "role": "AI Fellow"
+    },
+    {
+      "company": "Break Through Tech",
+      "period": "May 2026 - Present",
+      "role": "AI/ML Fellow"
+    },
+    {
+      "company": "R.I.S.E. x GWC Protothon - Second Place Winners",
+      "period": "March 2026",
+      "role": ""
+    },
+    {
+      "company": "Fisk University",
+      "period": "August 2025 - Present",
+      "role": "Office of Global Initiatives Ambassador"
+    },
+    {
+      "company": "Arkansas School for Mathematics, Sciences, and the Arts",
+      "period": "May 2025 - June 2025",
+      "role": "Arkansas Summer Research Institute Student Researcher"
+    },
+    {
+      "company": "AUC Data Science Initiative",
+      "period": "April 2025",
+      "role": "AUC x Vanderbilt AI Un-Hackathon - First Prize Winner"
+    },
+    {
+      "company": "PwC",
+      "period": "February 2025 - March 2025",
+      "role": "Workflow Automation Extern"
+    },
+    {
+      "company": "Bloomberg",
+      "period": "February 2025",
+      "role": "Bloomberg Tech Lab"
+    },
+    {
+      "company": "University of Lagos Engineering Society",
+      "period": "January 2024 - February 2024",
+      "role": "Drone Design and Programming Participant"
+    },
+    {
+      "company": "STAIJA",
+      "period": "November 2023 - May 2024",
+      "role": "Web Designer"
+    },
+    {
+      "company": "Viva Aerospace",
+      "period": "September 2023 - February 2024",
+      "role": "Freelance Writer"
     }
   ],
   "education": [
@@ -41,15 +103,55 @@
     }
   ],
   "skills": [
-    { "name": "Python", "icon": "python.png", "level": "3 years" },
-    { "name": "Git", "icon": "git.png", "level": "3 years" },
-    { "name": "CSS", "icon": "css-3.png", "level": "2 years" },
-    { "name": "HTML", "icon": "html.png", "level": "2 years" },
-    { "name": "Flask Framework", "icon": "flask.png", "level": "2 years" },
-    { "name": "C++", "icon": "c-.png", "level": "2 years" },
-    { "name": "React", "icon": "atom.png", "level": "2 years" },
-    { "name": "Arduino", "icon": "arduino.png", "level": "2 years" },
-    { "name": "JavaScript", "icon": "java-script.png", "level": "1 year" },
-    { "name": "Figma", "icon": "figma.png", "level": "1 year" }
+    {
+      "name": "Python",
+      "icon": "python.png",
+      "level": "3 years"
+    },
+    {
+      "name": "Git",
+      "icon": "git.png",
+      "level": "3 years"
+    },
+    {
+      "name": "CSS",
+      "icon": "css-3.png",
+      "level": "2 years"
+    },
+    {
+      "name": "HTML",
+      "icon": "html.png",
+      "level": "2 years"
+    },
+    {
+      "name": "Flask Framework",
+      "icon": "flask.png",
+      "level": "2 years"
+    },
+    {
+      "name": "C++",
+      "icon": "c-.png",
+      "level": "2 years"
+    },
+    {
+      "name": "React",
+      "icon": "atom.png",
+      "level": "2 years"
+    },
+    {
+      "name": "Arduino",
+      "icon": "arduino.png",
+      "level": "2 years"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "java-script.png",
+      "level": "1 year"
+    },
+    {
+      "name": "Figma",
+      "icon": "figma.png",
+      "level": "1 year"
+    }
   ]
 }
